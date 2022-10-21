@@ -30,6 +30,8 @@ string appicon = "icono.ico"
 string appruntimeversion = "22.0.0.1878"
 boolean manualsession = false
 boolean unsupportedapierror = false
+boolean bignoreservercertificate = false
+uint ignoreservercertificate = 0
 end type
 global pdfsign pdfsign
 
@@ -59,16 +61,17 @@ event open;String ls_Path
 unsignedlong lul_handle
 
 ls_Path = space(1024)
-lul_handle = Handle(GetApplication())
-GetModuleFilenameW(lul_handle, ls_Path, 1024)
+SetNull(lul_handle)
+GetModuleFilenameW(lul_handle, ls_Path, len(ls_Path))
 
-if right(UPPER(ls_path), 9)="PB220.EXE" then
-	ls_path="C:\projecto pw2022\Blog\Actualizado a 2022\pdfsign\pdfsign.exe"
+if right(UPPER(ls_path), 7)="220.EXE" or right(UPPER(ls_path), 7)="X64.EXE" then
+	ls_path="C:\projecto pw2022\Blog\PowerBuilder\pdfsign\pdfsign.exe"
 end if
 
 gs_dir=left(ls_path, len(ls_path) - 11)
 
 gs_ini=gs_dir+"pdfsign.ini"
+
 
 Open(w_main)
 end event
