@@ -40,6 +40,12 @@ if ls_extension <> ".pdf" then
 	Return false
 end if	
 
+if not FileExists(as_ruta) then
+	gf_mensaje ("Atención", "¡ No Existe el Fichero  " + as_ruta + " !")
+	Return false
+end if	
+
+
 ls_firma=lo_File.of_GetFileName(as_firma)
 
 if ls_firma = "" then
@@ -51,6 +57,11 @@ ls_extension = lo_File.of_GetExtension(ls_firma)
 
 if ls_extension <> ".pfx" then
 	gf_mensaje ("Atención", "¡ El archivo "+ls_firma+ " no es un PFX !")
+	Return false
+end if	
+
+if not FileExists(ls_firma) then
+	gf_mensaje ("Atención", "¡ No Existe el Certificado  " +ls_firma + " !")
 	Return false
 end if	
 			
