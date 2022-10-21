@@ -74,6 +74,16 @@ if not FileExists(gs_dir+"NetPdfService.dll") then
 	Return false
 end if	
 
+if not FileExists(gs_dir+"FileService.dll") then
+	gf_mensaje ("Atención", "¡ Necesita el Archivo FileService.dll !")
+	Return false
+end if	
+
+if not FileExists(gs_dir+"FileService.runtimeconfig.json") then
+	gf_mensaje ("Atención", "¡ Necesita el Archivo FileService.runtimeconfig.json !")
+	Return false
+end if	
+
 
 ls_reason="proof of authenticity"
 ls_location=""
