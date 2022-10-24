@@ -2,9 +2,9 @@
 EXE:pdfsign.exe,,0,1,1,0,C:\Program Files (x86)\Appeon\Common\PowerBuilder\Runtime 22.0.0.1878
 CMP:0,1,1,3,0,0,1
 COM:RSRSYSTEM
-DES:Appeon Power Builder 2019 Product File 64Bits
-CPY:RASANFE
-PRD:PdfSign
+DES:Appeon Power Builder 2022 Product File 64Bits
+CPY:Ramón San Félix Ramón
+PRD:PdfSign2022
 PVS:2022.0.1878.3
 PVN:2022,0,1878,3
 FVS:2022.0.1878.3
