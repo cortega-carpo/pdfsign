@@ -36,10 +36,8 @@ end type
 global pdfsign pdfsign
 
 type prototypes
-//Funcion para tomar el directorio de la aplicacion
-FUNCTION int GetModuleFileNameW(ulong hinstModule, REF string lpszPath,  ulong cchPath) LIBRARY "kernel32"
-end prototypes
 
+end prototypes
 on pdfsign.create
 appname="pdfsign"
 message=create message
@@ -57,21 +55,9 @@ destroy(error)
 destroy(message)
 end on
 
-event open;String ls_Path
-unsignedlong lul_handle
-
-ls_Path = space(1024)
-SetNull(lul_handle)
-GetModuleFilenameW(lul_handle, ls_Path, len(ls_Path))
-
-if right(UPPER(ls_path), 7)="220.EXE" or right(UPPER(ls_path), 7)="X64.EXE" then
-	ls_path="C:\projecto pw2022\Blog\PowerBuilder\pdfsign\pdfsign.exe"
-end if
-
-gs_dir=left(ls_path, len(ls_path) - 11)
+event open;gs_dir= GetCurrentDirectory() +"\"
 
 gs_ini=gs_dir+"pdfsign.ini"
-
 
 Open(w_main)
 end event
