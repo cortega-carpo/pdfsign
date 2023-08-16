@@ -27,7 +27,7 @@ long richtexteditx64type = 5
 long richtexteditversion = 3
 string richtexteditkey = ""
 string appicon = "icono.ico"
-string appruntimeversion = "22.0.0.1900"
+string appruntimeversion = "22.1.0.2819"
 boolean manualsession = false
 boolean unsupportedapierror = false
 boolean bignoreservercertificate = false
@@ -38,6 +38,7 @@ global pdfsign pdfsign
 type prototypes
 
 end prototypes
+
 on pdfsign.create
 appname="pdfsign"
 message=create message
